@@ -1,5 +1,6 @@
 @import "menu";
 @import "table";
+@import "media-utils";
 @import url("http://fonts.cdnfonts.com/css/roboto");
 
 $standard-spacing: 15px;
@@ -98,6 +99,8 @@ ul {
     img {
       display: block;
       margin: 5px auto;
+      max-width: 400px;
+      min-width: 300px;
     }
 
     table {
@@ -126,6 +129,19 @@ ul {
         height: 100%;
         width: 100%;
       }
+    }
+  }
+}
+
+@include media("<=1350px") {
+  h1 {
+    font-size: 20px;
+  }
+
+  #wrapper {
+    section {
+      margin: 10px;
+      width: 100%;
     }
   }
 }

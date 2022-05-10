@@ -1,3 +1,5 @@
+@import "media-utils";
+
 .menu-item {
   color: black;
   font-family: Helvetica;
@@ -30,4 +32,10 @@
   top: 10px;
   width: max-content;
   height: max-content;
+}
+
+@include media("<=1350px") {
+  #menu {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
 }
