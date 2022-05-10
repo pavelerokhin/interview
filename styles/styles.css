@@ -35,6 +35,11 @@
   height: max-content;
 }
 
+@media (max-width: 1350px) {
+  #menu {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}
 table tr {
   border: 1px solid black;
 }
@@ -139,6 +144,8 @@ ul {
 #wrapper section img {
   display: block;
   margin: 5px auto;
+  max-width: 400px;
+  min-width: 300px;
 }
 #wrapper section table {
   margin: 5px auto;
@@ -163,6 +170,17 @@ ul {
 #wrapper section .two-cols .response-video {
   height: 100%;
   width: 100%;
+}
+
+@media (max-width: 1350px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  #wrapper section {
+    margin: 10px;
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
