@@ -1,0 +1,168 @@
+@import url("http://fonts.cdnfonts.com/css/roboto");
+.menu-item {
+  color: black;
+  font-family: Helvetica;
+}
+
+.menu-item-active {
+  border: 1px solid red;
+  color: red;
+  padding: 5px;
+}
+
+.menu-item-active:not(::first-child),
+.menu-item-active:not(::last-child) {
+  margin: 5px 0;
+}
+
+.menu-item-active:first-child {
+  margin-bottom: 5px;
+}
+
+.menu-item-active:last-child {
+  margin-top: 5px;
+}
+
+#menu {
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  width: max-content;
+  height: max-content;
+}
+
+table tr {
+  border: 1px solid black;
+}
+table tr.row-highlighted {
+  background-color: rgba(204, 255, 0, 0.429);
+}
+table tr td {
+  padding: 5px;
+}
+table tr th {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Roboto";
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+p.text {
+  margin: 5px 0 7px 0;
+}
+
+pre {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  border-left: 3px solid #f36d33;
+  color: #555;
+  display: block;
+  font-family: monospace;
+  font-size: 15px;
+  line-height: 1.5em;
+  margin-bottom: 15px;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1em 1em;
+  page-break-inside: avoid;
+  word-wrap: break-word;
+}
+
+span.pre {
+  background-color: rgba(237, 237, 237, 0.71);
+  display: inline-block;
+  font-family: monospace;
+  margin: 5px;
+  padding: 7px;
+  white-space: pre;
+}
+
+span.strong {
+  font-weight: 900;
+}
+
+ul {
+  list-style-position: inside;
+  list-style-type: square;
+  margin-top: 10px;
+}
+
+#alcachofa-container {
+  border: 1px solid lightgrey;
+  display: flex;
+  height: 700px;
+  width: 100%;
+}
+#alcachofa-container #alcachofa {
+  border: 1px solid green;
+  color: green;
+  line-height: 100px;
+  margin: auto;
+  text-align: center;
+  height: 100px;
+  width: 100px;
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+#wrapper h1 {
+  margin: 15px auto;
+}
+#wrapper section {
+  display: flex;
+  flex-direction: column;
+  margin: 15px auto;
+  min-height: 60vh;
+  padding: 15px;
+  width: 60%;
+}
+#wrapper section h2 {
+  margin-bottom: 15px;
+}
+#wrapper section img {
+  display: block;
+  margin: 5px auto;
+}
+#wrapper section table {
+  margin: 5px auto;
+}
+#wrapper section .italic,
+#wrapper section .question {
+  font-style: italic;
+}
+#wrapper section .response,
+#wrapper section .response-columns {
+  margin-top: 15px;
+}
+#wrapper section .two-cols {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#wrapper section .two-cols * {
+  display: block;
+  width: 40%;
+}
+#wrapper section .two-cols .response-video {
+  height: 100%;
+  width: 100%;
+}
+
+/*# sourceMappingURL=styles.css.map */

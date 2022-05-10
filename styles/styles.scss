@@ -1,0 +1,131 @@
+@import "menu";
+@import "table";
+@import url("http://fonts.cdnfonts.com/css/roboto");
+
+$standard-spacing: 15px;
+
+* {
+  box-sizing: border-box;
+  font-family: "Roboto";
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+p.text {
+  margin: 5px 0 7px 0;
+}
+
+pre {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  border-left: 3px solid #f36d33;
+  color: #555;
+  display: block;
+  font-family: monospace;
+  font-size: 15px;
+  line-height: 1.5em;
+  margin-bottom: $standard-spacing;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1em 1em;
+  page-break-inside: avoid;
+  word-wrap: break-word;
+}
+
+span.pre {
+  background-color: rgba(237, 237, 237, 0.71);
+  display: inline-block;
+  font-family: monospace;
+  margin: 5px;
+  padding: 7px;
+  white-space: pre;
+}
+
+span.strong {
+  font-weight: 900;
+}
+
+ul {
+  list-style-position: inside;
+  list-style-type: square;
+  margin-top: 10px;
+}
+
+// for the test question #7
+#alcachofa-container {
+  border: 1px solid lightgrey;
+  display: flex;
+  height: 700px;
+  width: 100%;
+
+  #alcachofa {
+    border: 1px solid green;
+    color: green;
+    line-height: 100px;
+    margin: auto;
+    text-align: center;
+    height: 100px;
+    width: 100px;
+  }
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  h1 {
+    margin: $standard-spacing auto;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    margin: $standard-spacing auto;
+    min-height: 60vh;
+    padding: $standard-spacing;
+    width: 60%;
+
+    h2 {
+      margin-bottom: $standard-spacing;
+    }
+
+    img {
+      display: block;
+      margin: 5px auto;
+    }
+
+    table {
+      margin: 5px auto;
+    }
+
+    .italic,
+    .question {
+      font-style: italic;
+    }
+    .response,
+    .response-columns {
+      margin-top: $standard-spacing;
+    }
+
+    .two-cols {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      & * {
+        display: block;
+        width: 40%;
+      }
+
+      .response-video {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

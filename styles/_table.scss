@@ -1,0 +1,18 @@
+table {
+  tr {
+    border: 1px solid black;
+
+    &.row-highlighted {
+      background-color: rgba(204, 255, 0, 0.429);
+    }
+
+    td {
+      padding: 5px;
+    }
+
+    th {
+      border: 1px solid black;
+      padding: 10px;
+    }
+  }
+}
