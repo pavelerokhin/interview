@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>test commitment</title>
+		<link rel="stylesheet" href="styles/styles.css">
+  </head>
+  <body>
+		<div id="wrapper">
+			<h1>Some responses on the test commitment's questions</h1>
+			<section id="one">
+				<h2>1)</h2>
+				<div class="question">
+					<p class="text">
+						Tell me about a time you had to explain something technical to a
+						non-technical person.
+					</p>
+				</div>
+				
+				<div class="response">
+					<p class="text">I like to talk about informatics with "non-technical" people. E.g. when I did freelance I had to explain to my client the concept of Docker container and explain why I may need to containerize the app I did.
+					</p>
+					<p class="text">To explain what a container is and why we may need it, I used an old meme: <span class="italic">"On my machine it works."</span> 
+					</p>
+					<div class="two-cols">
+						<img src="etc/meme.jpeg" alt="On my machine it works!" srcset="">
+						<p class="text">So, I told to my client that we should have an environment which is standardized and has all the app would require for the correct functioning. E.g., By using this metaphor we can explain how scaling of the application can be realized.
+						</p> 
+					</div>
+				</div>
+			</section>
+			<section id="two">
+				<h2>2)</h2>
+				<div class="question">
+					<p class="text">
+						Which Sorting algorithm do you like the most? What is its complexity?
+					</p>
+				</div>
+				<div class="response">
+					<p class="text">
+						I have no favourite sorting algorithm, for two reasons: 1. Choosing the algorithm always depends on the context, where we implement it. 2. Rarely happens for a developer to implement a sorting algorithm himself: there are usually yet implemented in the standard libs.
+					</p>
+					<p class="text">
+						The optimal criteria (ceteris paribus) can be the complexity of the algorithm. Normally in the general case, I use merge sort (I believe it is implemented in most of the compilers and interpreters by default). Its complecity is <span class="pre">n*log(n)</span>. Here in the table below we can see different [time] complexity estimations for some of the sorting algorithms:
+					</p>
+					<table>
+						<tr>
+							<th>Algorythm</th>
+							<th>Worst complexity</th>
+							<th>Average complexity</th>
+							<th>Best</th>
+						</tr>
+						<tr>
+							<td>Bubble sort</td>
+							<td><span class="pre">Ω(n)</span></td>
+							<td><span class="pre">θ(n^2)</span></td>
+							<td><span class="pre">O(n^2)</span></td>
+						</tr>
+						<tr>
+							<td>Insertion sort</td>
+							<td><span class="pre">Ω(n)</span> </td>
+							<td><span class="pre">θ(n^2)</span></td>
+							<td><span class="pre">O(n^2)</span></td>
+						</tr>
+						<tr class="row-highlighted">
+							<td>Merge sort</td>
+							<td><span class="pre">Ω(n log(n))</span></td>
+							<td><span class="pre">Ω(n log(n))</span></td>
+							<td><span class="pre">Ω(n log(n))</span></td>
+						</tr>
+						<tr>
+							<td>Count sort</td>
+							<td><span class="pre">Ω(n+k)</span></td>
+							<td><span class="pre">Ω(n+k)</span></td>
+							<td><span class="pre">Ω(n+k)</span></td>
+						</tr>
+					</table>
+					<p class="text">Here's an illustration of how merge sort works for a generic <span class="pre">int</span> slice:</p>
+					<img src="./etc/merge-sort.gif" alt="merge sort illustration" srcset="">
+					<p class="text">Count sort has lower time complexity, but it has <a href="https://en.wikipedia.org/wiki/Counting_sort">constraints</a>.</p>
+				</div>
+			</section>
+			<section id="three">
+				<h2>3)</h2>
+				<div class="question">
+					<p class="text">
+						Where are usually allocated log files in a unix system?
+					</p>
+				</div>
+				
+				<div class="response">
+					<p class="text">
+						In Unix-like systems logs are stored under:
+					</p>
+					<pre>
+/var/log
+					</pre>
+					<p class="text">
+						E.g. all global system activity data:
+					</p>
+					<pre>
+/var/log/syslog
+/var/log/messages 
+					</pre>
+				</div>
+			</section>
+			<section id="four">
+				<h2>4)</h2>
+				<div class="question">
+					<p class="text">
+						What is your opinion about Golang for the web?
+					</p>
+				</div>
+				<div class="response">
+					<p class="text">
+						In my own experience, Go is the most comfortable language for web development in case we'd like to apply microservice architecture. I had several BE-development experiences during my working life: I've developed in Java (Spring 2/5) and Python (with Django). For microservice development I prefer to use Go: it has simple high-level-API syntax like Python, but it is much more efficient for the concurrency issues (owing to goroutines and channels for the communication between different parallel components of the program.)
+					</p>
+					<p>I can also list some of the pros of Go for web development:</p>
+					<ul>
+						<li>easy to learn,</li>
+						<li>no need for a web framework (or in case we can choose between well-developed and powerful existing frameworks, e.g. <span class="pre">Gin</span>),</li>
+						<li>powerful for concurrency purposes (CSP-style currency, memory allocation, atomic types).</li>
+					</ul>
+				</div>
+			</section>
+			<section id="five">
+				<h2>5)</h2>
+				<div class="question">
+					<p class="text">
+						Write the UNIX command that adds the read access permission to the group
+						members of a directory and to all its content.
+					</p>
+				</div>
+				<div class="response">
+					<pre>
+chmod -R g+r &lt;dir_name&gt;
+					</pre>
+				</div>
+			</section>
+			<section id="six">
+				<h2>6)</h2>
+				<div class="question">
+					<p class="text">
+						Implement a function called uniqueFruits, that passing two slices of
+						fruits, it will return a slice containing the fruits that appear in
+						<span class="strong">either or both</span> slices. The returned slice
+						should have no duplicates.
+					</p>
+				</div>
+				
+				<div class="response">
+					<p class="text">See <span class="pre">main.go</span> file in the project</p>
+					<pre>
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	fruits1 := []string{"apple", "melon", "banana", "melon", "grape"}
+	fruits2 := []string{"apple", "grape", "grape", "banana"}
+
+	fmt.Println(uniqueFruits(fruits1, fruits2))
+}
+
+func uniqueFruits(fruits1, fruits2 []string) []string {
+	result := []string{}
+	for _, f := range fruits1 {
+		if !contains(f, fruits2) && !contains(f, result) {
+			result = append(result, f)
+		}
+	}
+	for _, f := range fruits2 {
+		if !contains(f, fruits1) && !contains(f, result) {
+			result = append(result, f)
+		}
+	}
+
+	return result
+}
+
+func contains(fruit string, otherFruits []string) bool {
+	for _, f := range otherFruits {
+		if fruit == f {
+			return true
+		}
+	}
+	return false
+}
+					</pre>
+				</div>
+			</section>
+			<section id="seven">
+				<h2>7)</h2>
+				<div class="question">
+					<p class="text">
+						Write an HTML page with a div containing the text Alcachofa in green
+						colour. The div must be horizontally and vertically centred.
+					</p>
+				</div>
+				<div id="alcachofa-container" class="response">
+					<div id="alcachofa">
+						Alcachofa
+					</div>
+				</div>
+				<p class="text">HTML:</p>
+				<pre>
+&lt;div id="alcachofa-container" class="response"&gt;
+	&lt;div id="alcachofa"&gt;
+		Alcachofa
+	&lt;/div&gt;
+&lt;/div&gt;
+				</pre>
+				<p class="text">CSS:</p>
+				<pre>
+#alcachofa-container {
+	border: 1px solid lightgrey;
+	display: flex;
+	height: 700px;
+	width: 100%;
+}
+
+#alcachofa-container #alcachofa {
+	border: 1px solid green;
+	color: green;
+	line-height: 100px;
+	margin: auto;
+	text-align: center;
+	height: 100px;
+	width: 100px;
+}
+				</pre>
+				<p class="text">SCSS:</p>
+				<pre>
+#alcachofa-container {
+	border: 1px solid lightgrey;
+	display: flex;
+	height: 700px;
+	width: 100%;
+
+	#alcachofa {
+		border: 1px solid green;
+		color: green;
+		line-height: 100px;
+		margin: auto;
+		text-align: center;
+		height: 100px;
+		width: 100px;
+	}
+}
+				</pre>
+
+				<p class="text">There are <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjy3oDt5dT3AhWc8LsIHSupAdgQFnoECAsQAQ&url=https%3A%2F%2Fcss-tricks.com%2Fcentering-css-complete-guide%2F&usg=AOvVaw0-H8M-497n4V1GyJevWgBZ">several ways</a> to centre a <span class="pre">&lt;div&gt;</span>in CSS, but I prefer to use <span class="pre">flexbox</span> because it is more comfortable and is <a href="https://www.w3schools.com/css/css3_flexbox.asp">supported</a> in most browsers. </p>
+			</section>
+			<section id="eight">
+				<h2>8)</h2>
+				<div class="question">
+					<p class="text">
+						From the following tables write a SQL query to find the city with the
+						maximum number of plant species that don't grow in the same city where
+						their farmers live and have more than 25 species. (In a city a farmer
+						can grow different types of plants).
+						<pre>
+<span class="italic">Plant</span> - Id, name, city, number_of_species, farmer_id
+<span class="italic">Farmer</span> - Id, name, city
+						</pre>
+					</p>
+				</div>
+				<div class="response">
+					<p class="text">See example SQLite db in repo: <span class="pre">plants.db</span>.</p>
+					<pre>
+SELECT data.city
+FROM (SELECT p.city, SUM(p.number_of_species) AS nos
+FROM
+	plant p,
+	farmer f
+WHERE
+	p.farmer_id = f.id
+	AND p.city != f.city
+	AND p.number_of_species > 25
+GROUP BY p.city) data
+ORDER BY data.nos DESC
+LIMIT 1
+					</pre>
+				</div>
+			</section>
+			<div id="menu"></div>
+		</div>
+
+		<script src="./vendor/Menu.js"></script>
+		<script>
+			let menu = new Menu({
+				menuContainerId: "menu",
+				items: [
+					{ href: "#one", caption: "question one" },
+					{ href: "#two", caption: "question two" },
+					{ href: "#three", caption: "question three" },
+					{ href: "#four", caption: "question four" },
+					{ href: "#five", caption: "question five" },
+					{ href: "#six", caption: "question six" },
+					{ href: "#seven", caption: "question seven" },
+					{ href: "#eight", caption: "question eight" },
+				],
+			});
+	
+			window.onload = () => {
+				menu.init();
+			};
+		</script>
+		
+  </body>
+</html>

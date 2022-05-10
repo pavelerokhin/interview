@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/Users/pavelerokhin/UC/interview/plants.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="688"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,5:mainplant"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="farmer" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="18"/><column index="2" value="36"/><column index="3" value="28"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="plant" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="49"/><column index="2" value="283"/><column index="3" value="66"/><column index="4" value="61"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">INSERT INTO farmer (id, name, city)
+VALUES (1, 'Bob', 'LA');
+INSERT INTO farmer (id, name, city)
+VALUES (2, 'Jane', 'LA');
+INSERT INTO farmer (id, name, city)
+VALUES (3, 'Clara', 'NY');
+INSERT INTO farmer (id, name, city)
+VALUES (4, 'John', 'LA');
+
+
+INSERT INTO plant (id, name,number_of_species,farmer_id)
+VALUES (1, 'Tagetes erecta',4,1);
+INSERT INTO plant (id, name,number_of_species,farmer_id)
+VALUES (2, 'Tagetes erecta',2,2);
+INSERT INTO plant (id, name,number_of_species,farmer_id)
+VALUES (3, 'Catharanthus roseus',1,2);
+INSERT INTO plant (id, name,number_of_species,farmer_id)
+VALUES (4, 'Catharanthus roseus',1,1);
+INSERT INTO plant (id, name,number_of_species,farmer_id)
+VALUES (5, 'Sutera cordata',7,3);
+INSERT INTO plant (id, name,number_of_species,farmer_id)
+VALUES (6, 'Platycodon grandiflorus',1,1);
+INSERT INTO plant (id, name,number_of_species,farmer_id)
+VALUES (7, 'Platycodon grandiflorus',2,2);
+INSERT INTO plant (id, name,number_of_species,farmer_id)
+VALUES (8, 'Platycodon grandiflorus',3,3);
+INSERT INTO plant (id, name,number_of_species,farmer_id)
+VALUES (10, ' 	Kolkwitzia amabilis ',40,3);
+</sql><sql name="SQL 2">SELECT data.city
+FROM (SELECT p.city, SUM(p.number_of_species) as nos
+FROM
+	plant p,
+	farmer f
+WHERE
+	p.farmer_id = f.id
+	AND p.city != f.city
+	AND p.number_of_species &gt; 25
+GROUP BY p.city) data
+ORDER BY data.nos DESC
+LIMIT 1
+</sql><current_tab id="1"/></tab_sql></sqlb_project>
