@@ -5,6 +5,8 @@ Project contains:
 * `main.go` with the requested function,
 * `plants.db` - an example SQLite DB to test SQL query.
 
+The menu used in `index.html` is from here: https://github.com/pavelerokhin/little-menu
+
 ## usage
 ```
 git clone https://github.com/pavelerokhin/interview.git
